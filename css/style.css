@@ -29,7 +29,8 @@ body {
     position: relative;
     padding: 10px;
     font-size: 17px;
-    color:#efeded
+    color:#efeded;
+    width: fit-content;
     
   }
   
@@ -322,7 +323,7 @@ button:focus {
   --current-card-rotation-offset: 0;
   --card-translateX-offset: 0;
   --card-rotation-offset: var(--current-card-rotation-offset);
-  --card-scale-offset: 1.2;
+  --card-scale-offset: 1;
   --opacity: 0.8;
 }
 .card.previous--card {
@@ -343,6 +344,12 @@ button:focus {
   width: calc(3 * var(--card-width));
   height: var(--card-height);
   pointer-events: none;
+  top: calc(50% - var(--card-height) / 2);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .infoList .info__wrapper {
   position: relative;
@@ -359,6 +366,7 @@ button:focus {
   transform: translateX(-30%) translateY(50%) translateZ(2rem);
   transition: transform var(--card-transition-duration) var(--card-transition-easing);
   align-items: center;
+  padding: 0 1rem;
 }
 .info .text {
   position: relative;
@@ -367,21 +375,30 @@ button:focus {
   white-space: nowrap;
   color: #fff;
   width: fit-content;
+  text-align: center;
 }
 .info .name {
   text-transform: uppercase;
   display: flex;
   margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: calc(var(--card-width) * 0.08);
 }
 
 .info .description {
   --text-size-offset: 0.045;
   font-weight: 500;
   margin-top: 2rem;
+  max-width: 100%;
+  display: flex;
+  font-size: calc(var(--card-width) * 0.06);
+  text-align: left;
 }
 .info.current--info {
   opacity: 1;
   display: block;
+  flex-direction: column;
+  justify-content: center;
 }
 .info.previous--info, .info.next--info {
   opacity: 0;
@@ -457,10 +474,6 @@ button:focus {
   }
   .about .about-content .left{
       flex: 100%;
-  }
-  .connect .connect-content .column{
-      width: 100%;
-      margin-bottom: 35px;
   }
 }
 @media (max-width: 690px) {
@@ -542,15 +555,12 @@ button:focus {
     }
     .infoList {
       width: var(--card-width);
-      height: calc(var(--card-height) + 50px);
-      bottom: calc(var(--card-height) + 100px);
-      left: 0;
-      right: 0;
+      height: calc(var(--card-height) + 150px);
       margin: auto;
     }
     .info {
       max-width: 100%;
-      transform: translateX(-20%) translateY(335%) translateZ(2rem);
+      transform: translateX(-13%) translateY(20%) translateZ(2rem);
       transition: transform var(--card-transition-duration) var(--card-transition-easing);
       align-items: center;
     }
@@ -559,30 +569,12 @@ button:focus {
       max-width: 100%;
       position: relative;
       font-family: "Montserrat";
-      font-size: calc(var(--card-width) * var(--text-size-offset, 0.09));
-      white-space: nowrap;
+      font-size: calc(var(--card-width) * var(--text-size-offset, 0.06));
       color: #fff;
-      width: fit-content;
+      width: auto;
     }
-  }
-  @media (min-width: 576px) {
-    .info {
-      max-width: 100%;
-      transform: translateX(-20%) translateY(800%) translateZ(2rem);
-      transition: transform var(--card-transition-duration) var(--card-transition-easing);
-      align-items: center;
-    }
-    .cardList {
-      height: 300px;
-    }
+
     
-    .infoList {
-      height: 100px;
-    }
-    
-    .info .text {
-      font-size: 1rem;
-    }
   }
   
   /* Media query for medium screens */
