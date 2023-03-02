@@ -473,16 +473,20 @@ button:focus {
   transition: transform calc(var(--d) * 2) var(--e);
 }
 .cardp:nth-child(1):before {
-  background-image: url(pics/webots_p.png)
+  background-image: url(pics/webots_p.png);
+  background-position: center;
 }
 .cardp:nth-child(2):before {
   background-image: url(pics/wemars_p.png);
+  background-position: center;
 }
 .cardp:nth-child(3):before {
   background-image: url(pics/pump_p.png);
+  background-position: center;
 }
 .cardp:nth-child(4):before {
   background-image: url(pics/coming-soon.png);
+  background-position: center;
 }
 
 .content {
