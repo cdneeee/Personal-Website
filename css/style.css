@@ -63,7 +63,6 @@ body {
 }
 .card-column{
   display: grid;
-  grid-auto-flow: column;
   grid-gap: 1rem;
   max-width: 1024px;
   margin: 0 auto;
@@ -419,13 +418,14 @@ button:focus {
 }
 
 /* projects */
+
 @media (min-width: 600px) {
-  .projects {
+  .card-column {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 800px) {
-  .projects {
+  .card-column {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -543,7 +543,7 @@ button:focus {
   .content {
     transform: translateY(calc(100% - 4.5rem));
   }
-  .content > *:not(.title) {
+  .content > *:not(.titlep) {
     opacity: 0;
     transform: translateY(1rem);
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
@@ -565,8 +565,8 @@ button:focus {
 .cardp:focus-within .content {
     transform: translateY(0);
   }
-  .cardp:hover .content > *:not(.title),
-.cardp:focus-within .content > *:not(.title) {
+  .cardp:hover .content > *:not(.titlep),
+.cardp:focus-within .content > *:not(.titlep) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
@@ -574,7 +574,7 @@ button:focus {
 
   .cardp:focus-within:before, .cardp:focus-within:after,
 .cardp:focus-within .content,
-.cardp:focus-within .content > *:not(.title) {
+.cardp:focus-within .content > *:not(.titlep) {
     transition-duration: 0s;
   }
 }
