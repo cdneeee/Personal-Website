@@ -30,7 +30,7 @@ $(document).ready(function(){
         loop: false
     });
     const scram = new TextScramble('.scramble', {
-        phrases: ['AI enthusiast', 'Student', 'Mechatronics engineer', 'Robots admirer', 'Tech enthusiast', 'Music lover', 'Gamer'],
+        phrases: ['AI enthusiast', 'Student', 'Electrical engineer', 'Robots admirer', 'Tech enthusiast', 'Music lover', 'Gamer'],
         interval: 50,
         animationTimeout: 1500,
         loop: true,
