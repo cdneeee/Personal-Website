@@ -30,10 +30,10 @@ resize();
 step();
 
 window.onresize = resize;
-canvas.onmousemove = onMouseMove;
-canvas.ontouchmove = onTouchMove;
-canvas.ontouchend = onMouseLeave;
-document.onmouseleave = onMouseLeave;
+document.addEventListener('mousemove', onMouseMove);
+document.addEventListener('touchmove', onTouchMove);
+document.addEventListener('touchend', onMouseLeave);
+document.addEventListener('mouseleave', onMouseLeave);
 
 function generate() {
 
