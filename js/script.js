@@ -225,3 +225,47 @@ function onMouseLeave() {
   pointerY = null;
 
 }
+
+// Project Tab Filtering
+document.addEventListener('DOMContentLoaded', function() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      tabBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+
+        if (filter === 'all' || category === filter) {
+          card.classList.remove('hidden');
+          card.style.animation = 'fadeIn 0.5s ease forwards';
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
+
+// Add fadeIn animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+document.head.appendChild(style);
