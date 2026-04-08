@@ -25,8 +25,12 @@ $(document).ready(function(){
     });
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Software Developer and Controls Specialist", "Engineering @ Western University"],
+        strings: ["Software Developer and Controls Specialist", "Electrical Engineering @ Western University"],
         typeSpeed: 50,
+        backSpeed: 28,
+        backDelay: 1800,
+        startDelay: 300,
+        smartBackspace: true,
         loop: true
     });
     const scram = new TextScramble('.scramble', {

@@ -387,6 +387,10 @@ section .title{
 width: 100%;
 display: flex;
 }
+.home .home-content{
+  width: 100%;
+  text-align: left;
+}
 .home .max-width .row{
 margin-right: 0;
 }
@@ -394,13 +398,18 @@ margin-right: 0;
   font-size: 27px;
 }
 .home .home-content .text-2{
-  font-size: 75px;
+  font-size: clamp(3.75rem, 6.4vw, 75px);
   font-weight: 600;
-  margin-left: -3px;
+  margin: 0 0 5px -3px;
+  line-height: 1.05;
+  min-width: 26ch;
+  white-space: nowrap;
 }
 .home .home-content .text-3{
-  font-size: 40px;
+  font-size: clamp(2rem, 3.8vw, 40px);
   margin: 5px 0;
+  min-height: 1.3em;
+  white-space: nowrap;
 }
 .home .home-content .text-3 span{
   color: #7b00ff;
@@ -1271,11 +1280,17 @@ a:focus {
   .max-width{
       padding: 0 23px;
   }
+  .home .home-content{
+      width: 100%;
+  }
   .home .home-content .text-2{
       font-size: 60px;
+      white-space: normal;
   }
   .home .home-content .text-3{
       font-size: 32px;
+      min-height: 2.6em;
+      white-space: normal;
   }
   .home .home-content a{
       font-size: 20px;
@@ -1284,9 +1299,12 @@ a:focus {
 @media (max-width: 500px) {
   .home .home-content .text-2{
       font-size: 50px;
+      white-space: normal;
   }
   .home .home-content .text-3{
       font-size: 27px;
+      min-height: 3em;
+      white-space: normal;
   }
   .about .about-content .left .text{
       font-size: 19px;
