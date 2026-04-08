@@ -402,7 +402,6 @@ margin-right: 0;
   font-weight: 600;
   margin: 0 0 5px -3px;
   line-height: 1.05;
-  min-width: 26ch;
   white-space: nowrap;
 }
 .home .home-content .text-3{
@@ -1285,6 +1284,7 @@ a:focus {
   }
   .home .home-content .text-2{
       font-size: 60px;
+      min-width: 0;
       white-space: normal;
   }
   .home .home-content .text-3{
@@ -1299,6 +1299,7 @@ a:focus {
 @media (max-width: 500px) {
   .home .home-content .text-2{
       font-size: 50px;
+      min-width: 0;
       white-space: normal;
   }
   .home .home-content .text-3{
@@ -1429,5 +1430,11 @@ a:focus {
     .info .text {
       font-size: 1.8rem;
     }
+  }
+}
+
+@media (min-width: 691px) {
+  .home .home-content .text-2{
+      min-width: 26ch;
   }
 }
